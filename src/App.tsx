@@ -7,7 +7,10 @@ import Quiz1 from './components/Quiz1';
 
 function App(): React.ReactElement {
   return (
-    <div>
+    <div
+      data-testid="app-wrapper"
+      style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+    >
       <Button />
       <Quiz1 />
     </div>

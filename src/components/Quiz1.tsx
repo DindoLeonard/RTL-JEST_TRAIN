@@ -24,6 +24,7 @@ const Quiz1 = (): React.ReactElement => {
       >
         Change to {newButtonColor}
       </button>
+      <label htmlFor="disable-button-checkbox">Disable button</label>
       <input
         id="disable-button-checkbox"
         type="checkbox"
@@ -31,7 +32,6 @@ const Quiz1 = (): React.ReactElement => {
         defaultChecked={buttonDisabled}
         aria-checked={buttonDisabled}
       />
-      <label htmlFor="disable-button-checkbox">Disable button</label>
     </>
   );
 };
