@@ -95,3 +95,22 @@ Test fails if error is thrown when running function
   - Close to how users interact with software
   - Robust tests
   - !!! More difficult to debug failing tests
+
+# for EVENTS
+
+using `fireEvent` from react testing library to test events on components
+
+```javascript
+import { fireEvent } from '@testing-library/react';
+import Button from './Button';
+
+test('event is fired when clicked', () => {
+  render(<Button />);
+
+  const colorButton = screen.getByRole('button', { name: /button/i });
+
+  fireEvent.click(colorButton);
+
+  expect(colorButton).toHaveStyle({ backgroundColor: 'blue' });
+});
+```
