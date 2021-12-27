@@ -39,7 +39,7 @@ test('button id disabled when checkbox is checked', () => {
 
   expect(checkboxElement).not.toBeChecked();
 
-  fireEvent.click(checkboxElement);
+  fireEvent.click(checkboxElement, { name: 'Disable button' });
   expect(checkboxElement).toBeChecked();
   expect(buttonElement).toBeDisabled();
 
