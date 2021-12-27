@@ -1,0 +1,29 @@
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import App from './App';
+
+test('renders learn react link', () => {
+  render(<App />);
+  const linkElement = screen.getByText(/learn react/i);
+  expect(linkElement).toBeInTheDocument();
+});
+
+test('render a text of Learn React', () => {
+  // render the DOM
+  render(<App />);
+
+  // link an element
+  const linkElement = screen.getByText(/learn react/i);
+
+  // assertion, expect + matcher
+  expect(linkElement.textContent).toBe('Learn React');
+});
+
+// using role
+test('render text by get by role', () => {
+  render(<App />);
+
+  const linkAppElement = screen.getByRole('link', { name: /learn react/i });
+
+  expect(linkAppElement.textContent).toBe('Learn React');
+});

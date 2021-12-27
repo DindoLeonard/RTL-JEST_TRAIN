@@ -1,25 +1,15 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+// import logo from './logo.svg';
 import './App.css';
-import Assertion from './example-code/Assertions';
+import Button from './components/Button';
+import Quiz1 from './components/Quiz1';
+// import Assertion from './example-code/Assertions';
 
-function App() {
-  const [buttonColor, setButtonColor] = useState<string>('red');
-  const newButtonColor = buttonColor === 'red' ? 'blue' : 'red';
-
-  const onButtonColorChangeClick = () => {
-    setButtonColor(newButtonColor);
-  };
-
+function App(): React.ReactElement {
   return (
     <div>
-      <button
-        type="button"
-        style={{ backgroundColor: buttonColor }}
-        onClick={onButtonColorChangeClick}
-      >
-        Change to {newButtonColor}
-      </button>
+      <Button />
+      <Quiz1 />
     </div>
   );
 }
