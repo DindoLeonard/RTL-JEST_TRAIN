@@ -1,4 +1,3 @@
-import React from 'react';
 import replaceCamelWithSpaces from '../../functions/replaceCamelWithSpaces';
 
 describe('spaces before camel-case capital letters', () => {
