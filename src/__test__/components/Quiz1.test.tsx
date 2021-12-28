@@ -1,3 +1,4 @@
+import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import Quiz1 from '../../components/Quiz1';
 
@@ -26,7 +27,7 @@ test('button change background color when clicked', () => {
 
   expect(buttonElement).toHaveStyle({ backgroundColor: 'blue' });
 
-  expect(buttonElement.textContent).toBe('Change to red');
+  expect(buttonElement).toHaveTextContent('Change to red');
 });
 
 test('button id disabled when checkbox is checked', () => {

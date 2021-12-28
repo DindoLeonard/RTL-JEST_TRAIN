@@ -1,4 +1,5 @@
-import { render, screen } from '@testing-library/react';
+import React from 'react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import Assertion from '../example-code/Assertions';
 
 test('renders Hello World', () => {
@@ -6,7 +7,7 @@ test('renders Hello World', () => {
 
   const linkAssertionComponent = screen.getByText(/hello world/i);
 
-  expect(linkAssertionComponent.textContent).toBe('Hello world');
+  expect(linkAssertionComponent).toHaveTextContent('Hello world');
 });
 
 const forEach = (

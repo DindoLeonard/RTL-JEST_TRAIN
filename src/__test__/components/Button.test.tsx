@@ -1,3 +1,4 @@
+import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import Button from '../../components/Button';
 
@@ -19,7 +20,7 @@ test('button change color to blue after click', () => {
 
   expect(buttonElement).toHaveStyle({ backgroundColor: 'blue' });
 
-  expect(buttonElement.textContent).toBe('Change to red');
+  expect(buttonElement).toHaveTextContent('Change to red');
 });
 
 test('initial conditions', () => {
