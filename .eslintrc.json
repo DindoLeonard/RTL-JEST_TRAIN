@@ -1,8 +1,7 @@
 {
   "env": {
     "browser": true,
-    "es2021": true,
-    "jest": true
+    "es2021": true
   },
   // "extends": ["plugin:react/recommended", "airbnb"],
   "extends": [
@@ -21,5 +20,14 @@
     "sourceType": "module"
   },
   "plugins": ["react", "@typescript-eslint", "testing-library", "jest-dom"],
-  "rules": {}
+  "rules": {
+    "@typescript-eslint/no-unused-vars": [
+      // type `_<arg-name>` if you're not using a parameter argument
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ]
+  }
 }
