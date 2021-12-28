@@ -9,3 +9,4 @@ setupTests.ts
 build/
 .vscode/
 .utils/__test__/*
+tsconfig.json

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, FormGroup, FormCheck, Button } from 'react-bootstrap';
+import { Button, Checkbox, FormControlLabel, FormGroup } from '@mui/material';
 
 const SummaryForm = (): React.ReactElement => {
   const [disableButton, setDisableButton] = useState<boolean>(true);
@@ -8,30 +8,17 @@ const SummaryForm = (): React.ReactElement => {
     setDisableButton(!e.target.checked);
   };
 
-  const checkboxLabel = <span>Enable Button</span>;
-
   return (
     <div>
-      <Form>
-        <FormGroup controlId="checkbox">
-          <FormCheck
-            type="checkbox"
-            checked={!disableButton}
-            onChange={onCheckboxButtonClick}
-            label={checkboxLabel}
-          />
-        </FormGroup>
-      </Form>
-      <Button variant="primary" type="submit" disabled={disableButton}>
-        Button
-      </Button>
-      {/* <label htmlFor="checkbox-button">Enable Button</label>
-      <input
-        id="checkbox-button"
-        type="checkbox"
-        defaultChecked={!disableButton}
-        onChange={onCheckboxButtonClick}
-      /> */}
+      <FormGroup>
+        <FormControlLabel
+          control={
+            <Checkbox defaultChecked={false} onChange={onCheckboxButtonClick} />
+          }
+          label="Enable Button"
+        />
+      </FormGroup>
+      <Button disabled={disableButton}>Button</Button>
     </div>
   );
 };

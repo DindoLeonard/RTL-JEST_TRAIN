@@ -1,0 +1,14 @@
+node_modules/
+coverage/
+.vscode/
+
+yarn.lock
+yarn.error.log
+tsconfig.json
+
+react-app.env.d.ts
+reportWebVitals.ts
+setupTests.ts
+
+.husky/
+build/
