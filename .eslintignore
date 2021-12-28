@@ -1,0 +1,11 @@
+node modules/
+*.css
+*.svg
+coverage
+react-app.env.d.ts
+reportWebVitals.ts
+setupTests.ts
+.husky/
+build/
+.vscode/
+.utils/__test__/*
