@@ -1,4 +1,4 @@
-# Prettier install and configure
+# Prettier install and configure - SETUP
 
 1. install Prettier in vscode
 2. autoFormat on save

@@ -1,4 +1,4 @@
-# Husky and Lint-Staged setup and configure
+# Husky and Lint-Staged setup and configure - SETUP
 
 sources:
 

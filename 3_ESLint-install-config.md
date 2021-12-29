@@ -1,4 +1,4 @@
-# ESLint install and config
+# ESLint install and config - SETUP
 
 sources
 https://github.com/testing-library/eslint-plugin-testing-library
