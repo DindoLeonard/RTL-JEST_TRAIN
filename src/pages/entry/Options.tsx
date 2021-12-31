@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import ScoopOption from './ScoopOptions';
 import { Grid } from '@mui/material';
+import ToppingsOptions from './ToppingsOption';
 
 const Options = ({
   optionType,
@@ -11,19 +12,26 @@ const Options = ({
   const [items, setItems] = useState<{ name: string; imagePath: string }[]>([]);
 
   useEffect(() => {
+    let unmounted = false;
     const fetchData = async () => {
       try {
         const response = await axios.get<{ name: string; imagePath: string }[]>(
           `http://localhost:3030/${optionType}`
         );
 
-        setItems(response.data);
+        if (!unmounted) {
+          setItems(response.data);
+        }
       } catch (e) {
         return;
       }
     };
 
     fetchData();
+
+    return () => {
+      unmounted = true;
+    };
   }, [optionType]);
 
   // TODO: replace null with ToppingOption when available
@@ -34,9 +42,15 @@ const Options = ({
     name: string;
     imagePath: string;
   }) => {
-    return optionType === 'scoops' ? (
-      <ScoopOption name={name} imagePath={imagePath} />
-    ) : null;
+    if (optionType === 'scoops') {
+      return <ScoopOption name={name} imagePath={imagePath} />;
+    }
+
+    if (optionType === 'toppings') {
+      return <ToppingsOptions name={name} imagePath={imagePath} />;
+    }
+
+    return null;
   };
 
   const optionItems = items.map((item) => {

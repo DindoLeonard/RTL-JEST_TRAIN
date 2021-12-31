@@ -4,6 +4,7 @@ import './App.css';
 import Button from './components/Button';
 import Quiz1 from './components/Quiz1';
 import Quiz3 from './components/Quiz3';
+import Options from './pages/entry/Options';
 import SummaryForm from './pages/summary/SummaryForm';
 // import Assertion from './example-code/Assertions';
 
@@ -20,7 +21,10 @@ function App(): React.ReactElement {
       }}
     >
       {active ? (
-        <SummaryForm />
+        <>
+          <SummaryForm />
+          <Options optionType="toppings" />
+        </>
       ) : (
         <div>
           <Button />

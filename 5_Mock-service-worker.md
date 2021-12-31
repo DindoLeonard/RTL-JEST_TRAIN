@@ -63,3 +63,10 @@ afterEach(() => server.resetHandlers());
 // Clean up after the tests are finished.
 afterAll(() => server.close());
 ```
+
+# Summary
+
+1. create a handler
+2. create server
+3. update `setupTests` to listen for requests
+4. `await findBy<query>` or `await findAllBy<query>` to find asynchronous DOM update elements
